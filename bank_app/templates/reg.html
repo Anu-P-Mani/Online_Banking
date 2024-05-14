@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+       #exampleInputEmail1, #exampleInputEmail2, #exampleInputEmail3, #exampleInputEmail4, #exampleInputEmail5, #exampleInputEmail6, #exampleInputPassword1, #exampleInputPassword2{
+        width: 500px;
+        margin-left: 40px;
+       }
+        form{
+        background-color: rgb(16, 16, 61);
+        opacity: .8;
+        width:600px;
+        height: 570px;
+        border-radius: 30px;
+        padding: 20px 10px 10px;
+        margin-left: 330px;
+        margin-top: 30px;
+       }
+       #btn{
+       color: whitesmoke;
+       background-color: rgb(63, 63, 180);
+       }
+       #btn:hover{
+        transform: scale(1.1);
+        box-shadow: 0 0 4px;
+       }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+<body style="background-image:url({% static 'pexels-habib-904735.jpg' %});background-repeat: no-repeat;background-size: 100% 800px;background-attachment: fixed;">
+   <div id="d1">
+
+    <form method="post" enctype="multipart/form-data" style="text-align: center;">
+        {% csrf_token %}
+        <h3 style="text-align: center;color:whitesmoke;">Welcome New User</h3>
+        <br>
+        <div class="mb-3">
+            <input type="text" name="fname" placeholder="first name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="lname" placeholder="last name" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <input type="text" name="uname" placeholder="user name" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <input type="email" name="email" placeholder="email" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="phone" placeholder="phone" class="form-control" id="exampleInputEmail5" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <input type="file" name="img" placeholder="image upload" class="form-control" id="exampleInputEmail6" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <input type="password" name="pin" placeholder="4 digit pin" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <input type="password" name="rpin" placeholder="Re enter 4 digit pin" class="form-control" id="exampleInputPassword2">
+        </div>
+        <button type="submit" class="btn" id="btn">Submit</button>
+      </form>
+       </div>
+</body>
+</html>

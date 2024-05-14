@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <style>
+        #d1{
+        width:800px;
+        height:300px;
+        background-color:#F0EEFA;
+        margin-top:50px;
+        margin-left:220px
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Add Amount</title>
+</head>
+<body>
+<div id="d1">
+    <center>
+        <h2 style="margin-top:100px;">Add Amount</h2>
+<table>
+
+    <form method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+
+        <tr>
+          <td>
+              <input style="margin-top:50px;" type="number" name="amount" placeholder="Enter The Amount">
+          </td>
+          <td>
+              <input style="margin-top:50px;" type="password" name="pin" placeholder="4 digit PIN">
+          </td>
+      </tr>
+      <tr>
+        <td>
+            <center><button type="submit" class="btn btn-success"
+                            style="margin-bottom: 12px; margin-top: 12px; margin-left: 20px;" >Add Amount</button>
+            </center>
+        </td>
+      </tr>
+
+
+    </form>
+</table>
+</center>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+<!--        #a1{background-color: #0093E9;-->
+<!--background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);-->
+}
+
+#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn10{
+color: whitesmoke;
+ background-color: rgb(63, 63, 180);
+}
+#btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover, #btn6:hover, #btn7:hover, #btn8:hover, #btn9:hover, #btn10:hover {
+transform: scale(1.1);
+        box-shadow: 0 0 4px;
+}
+    </style>
+    <script src="https://kit.fontawesome.com/addef60cc7.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>profile</title>
+</head>
+<body style="background-color:#B0C4DE">
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row" id="a1" style="padding-top: 30px; background-color: rgb(16, 16, 61);box-shadow:0 0 10px;">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img src="{% static img %}"
+                    class="img-radius" alt="User-Profile-Image"
+                     style="height: 100px; width:100px ; border-radius:50%;">
+                    <div><a href="http://127.0.0.1:8000/bank_app/editimg/{{a.id}}" ><i class="fa-solid fa-pen-to-square" ></i></a></div>
+                    <span class="font-weight-bold" style="color:whitesmoke;">User Name:   {{a.uname}}</span>
+                    <span style="color:whitesmoke;">Acc Number: {{a.ac_num}}  </span><br>
+                    <span><a href="http://127.0.0.1:8000/bank_app/mini/{{a.id}}" ><button type="button" class="btn" id="btn1">Mini Statement</button></a></span><br>
+                    <span><a href="http://127.0.0.1:8000/bank_app/newsdisplay/" ><button type="button" class="btn" id="btn2">Show News</button></a><br></span>
+                </div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+
+                    <div class="row mt-3">
+                        <h5 style="color:whitesmoke;"><center>PERSONAL DETAILS</center></h5><br><br>
+                         <h6 style="color:whitesmoke;">First Name:   {{a.fname}}</h6><br>
+                         <h6 style="color:whitesmoke;">Last Name:   {{a.lname}}</h6><br>
+                         <h6 style="color:whitesmoke;">User Name:   {{a.uname}}</h6><br>
+                         <h6 style="color:whitesmoke;">Email:   {{a.email}}</h6><br>
+                         <h6 style="color:whitesmoke;">Phone:   {{a.phone}}</h6><br>
+
+                    </div>
+
+                    <div class="mt-5">
+                    <a href="http://127.0.0.1:8000/bank_app/editprofile/{{a.id}}" class="btn" id="btn3">Edit details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <center>
+                        <a href="http://127.0.0.1:8000/bank_app/amountadd/{{a.id}}"><button type="button" class="btn" id="btn5">Add Amount</button></a><br><br>
+                        <a href="http://127.0.0.1:8000/bank_app/withdraw/{{a.id}}"><button type="button" class="btn" id="btn6">Withdraw Amount</button></a><br><br>
+                        <a href="http://127.0.0.1:8000/bank_app/check/"><button type="button" class="btn" id="btn7">Check Balance</button></a><br><br>
+                        <a href="http://127.0.0.1:8000/djangoapp/check/{{a.id}}"><button type="button" class="btn" id="btn8">Money Transfer</button></a><br><br>
+                        <a href=""><button type="button" class="btn" id="btn9">wishlist</button></a><br><br>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+    <center>
+    <a href="http://127.0.0.1:8000/bank_app/logout" ><button type="button" class="btn" id="btn10">logout</button></a><br><br>
+    </div>
+        </center>
+</body>
+</html>

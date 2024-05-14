@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>news</title>
+</head>
+<body>
+{% for i in p %}
+<div class="container">
+    <h2>{{i.topic}}</h2>
+        <p>{{i.content}}</p>
+         <p>{{i.date}}</p>
+        <div class="button-container">
+            <a href="http://127.0.0.1:8000/bank_app/editnews/{{i.id}}" ><button>edit</button></a>
+            <a href="http://127.0.0.1:8000/bank_app/newsdel/{{i.id}}" ><button>delete</button></a>
+        </div>
+ </div>
+{% endfor %}
+</body>
+</html>

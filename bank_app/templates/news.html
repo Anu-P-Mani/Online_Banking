@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      .container{
+      display:block;
+      }
+      .a,.b{
+      flex:5;
+      padding:40px;
+      text-align:center;
+      }
+      textarea{
+      border:2px solid ;
+      border-radius:5px;
+      padding:5px;
+      font-size:14px;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <title>News feeds</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+ <div class="container">
+    <div class="a">
+        <label>topic</label><br>
+        <input type="text" name="topic">
+    </div>
+
+    <div class="b">
+    <label for="ab">Content</label><br>
+    <textarea rows="5" cols="20" id="ab" name="content"></textarea>
+    </div>
+    <center><button type="submit">submit</button></center>
+ </div>
+</form>
+</body>
+</html>

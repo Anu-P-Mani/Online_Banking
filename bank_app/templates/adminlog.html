@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <style>
+    body{
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5;
+  background: #F1F2B5;
+background: -webkit-linear-gradient(to right, #135058, #F1F2B5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #135058, #F1F2B5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#sample3{
+padding-left:90px;
+padding-right:50px;
+}
+/*Sign In Form*/
+.signin{
+<!--  position: relative;-->
+  height: 700px;
+  width: 500px;
+  margin: auto;
+  box-shadow: 0px 30px 125px -5px #000;
+  }
+/*Background Img*/
+.back-img{
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: url('{% static 'jp1.webp' %}')no-repeat   center center;
+background-size: cover;
+}
+.layer {
+    background-color: rgba(33,150,243,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.active{
+  padding-left: 35px;
+  color: #fff;
+}
+.nonactive {
+  color: rgba(255, 255, 255, 0.6);
+}
+.sign-in-text{
+  color:red;
+  top: 175px;
+  position: absolute;
+  z-index: 1;
+}
+h2 {
+  padding-left: 18px;
+  font-size: 25px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 300;
+}
+
+/*form-section*/
+.form-section{
+  padding: 70px 90px 70px 90px;
+}
+.keep-text{
+  font-size: 15px;
+  color: #BDBDBD;
+}
+.forgot-text{
+  font-size: 14px;
+  color: #BDBDBD;
+  text-align: center;
+}
+.forgot-text:hover{
+color:blue;
+}
+/*sign-in-btn*/
+.sign-in-btn{
+  width: 100%;
+  height: 75px;
+<!--  position:absolute;-->
+  bottom:0;
+  border-radius: 0px;
+  background-color: rgba(63, 78, 191, 1);
+}
+.sign-in-btn:hover{
+background: #F1F2B5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #135058, #F1F2B5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #135058, #F1F2B5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+</style>
+
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+</head>
+<body>
+  <div class="signin">
+    <div class="back-img">
+      <div class="sign-in-text">
+        <h2 class="active"style="color:black;margin-bottom:20px;">Welcome to JPMORGAN CHASE</h2>
+      </div>
+      <div class="layer">
+      </div>
+
+    </div>
+    <div class="form-section">
+
+      <form method="post">{% csrf_token %}
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <label  class="mdl-textfield__label" for="sample3" style="padding-left:110px;">username</label><br><br>
+          <input class="mdl-textfield__input" type="text" name="username" id="sample3">
+
+        </div>
+        <br/>
+        <br/>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <label class="mdl-textfield__label" for="sample3" style="padding-left:110px;">password</label><br><br>
+          <input  class="mdl-textfield__input" type="password" name="password" id="sample3">
+        </div>
+        <br/>
+
+       <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored " type="submit" >
+        Submit
+       </button>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
